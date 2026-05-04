@@ -1,12 +1,3 @@
-import streamlit as st
-
-st.write("App started...")
-
-import os
-
-st.write("Files in directory:")
-st.write(os.listdir())
-
 # -*- coding: utf-8 -*-
 """app.py
 
