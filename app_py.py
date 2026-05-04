@@ -23,13 +23,22 @@ Original file is located at
 # # =============================
 # # LOAD DATA (buat feature)
 # # =============================
-# df_hist = pd.read_csv("results.csv")
+# @st.cache_data
+# def load_data():
+#    return pd.read_csv("results.csv")
+#
+# df_hist = load_data()
 # df_hist = df_hist.dropna(subset=['home_score', 'away_score'])
 # 
 # # =============================
 # # FEATURE HELPER
 # # =============================
 # 
+# with st.spinner("Loading data..."):
+#    df_hist = load_data()
+#
+# st.write("Data loaded:", df_hist.shape)
+#
 # def get_win_rate(team, is_home=True):
 #     if is_home:
 #         df_team = df_hist[df_hist['home_team'] == team]
